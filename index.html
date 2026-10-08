@@ -536,16 +536,190 @@
       }
 
       @media (max-width: 600px) {
+        body {
+          display: block;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        .screen {
+          min-height: 100vh;
+          min-height: 100svh;
+          padding: calc(78px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom));
+        }
+
         .card {
-          padding: 28px 18px;
+          max-width: 440px;
+          padding: 26px 20px 24px;
+          border-width: 1px;
+          border-radius: 26px;
+          box-shadow: 0 18px 38px rgba(104, 54, 118, 0.35);
+        }
+
+        .kuromi-main {
+          width: 138px;
+          height: 138px;
+          margin-bottom: 16px;
+          border: 3px solid rgba(255, 190, 220, 0.75);
+          border-radius: 50%;
+          box-shadow: 0 8px 24px rgba(255, 122, 167, 0.3);
+        }
+
+        h1 {
+          font-size: clamp(2.15rem, 10vw, 2.8rem);
+        }
+
+        .card > p {
+          font-size: 1rem;
+          line-height: 1.55;
+          margin-bottom: 20px;
         }
 
         .buttons {
-          flex-direction: column;
+          gap: 12px;
+        }
+
+        .buttons button {
+          flex: 1;
+          min-height: 50px;
+          padding: 13px 20px;
+        }
+
+        .letter-card {
+          position: relative;
+          right: auto;
+          bottom: auto;
+          width: 92px;
+          height: 104px;
+          margin: 22px auto 0;
+          animation: none;
+        }
+
+        .letter-card.open {
+          position: fixed;
+          left: 50%;
+          top: 50%;
+          right: auto;
+          bottom: auto;
+          width: min(88vw, 360px);
+          height: 250px;
+          margin: 0;
+          transform: translate(-50%, -50%);
+          z-index: 40;
+        }
+
+        .love-page {
+          align-items: flex-start;
+          justify-content: flex-start;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        .love-content {
+          padding: 18px 0 calc(28px + env(safe-area-inset-bottom));
+        }
+
+        .love-content h2 {
+          max-width: 520px;
+          margin: 0 auto 10px;
+          font-size: clamp(2rem, 9vw, 2.8rem);
+          line-height: 1.12;
+        }
+
+        .love-content .subtitle {
+          font-size: 1rem;
+          line-height: 1.5;
+          margin-bottom: 22px;
+        }
+
+        .back-btn {
+          top: calc(14px + env(safe-area-inset-top));
+          left: 14px;
+          width: 44px;
+          height: 44px;
+          font-size: 1.6rem;
+        }
+
+        .music-toggle {
+          top: calc(14px + env(safe-area-inset-top));
+          right: 14px;
+          min-width: 0;
+          min-height: 44px;
+          padding: 8px 12px;
+          font-size: 0.82rem;
+        }
+
+        .gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+          margin: 24px 0;
+        }
+
+        .gallery-slot {
+          min-height: 0;
+          aspect-ratio: 1;
+          border-radius: 18px;
+        }
+
+        .gallery-slot:last-child {
+          grid-column: 1 / -1;
+          aspect-ratio: 1.55;
+        }
+
+        .gallery-slot img {
+          border-radius: 16px !important;
+        }
+
+        .note {
+          padding: 22px 16px;
+          border-radius: 20px;
+          font-size: 1rem;
+          line-height: 1.65;
+        }
+
+        .note::after {
+          right: 12px;
+          top: 8px;
+          font-size: 1.1rem;
+        }
+
+        .dog-card {
+          padding: 28px 20px;
+          border-radius: 26px;
+        }
+
+        .dog-card .emoji {
+          font-size: 72px;
+        }
+
+        .retry-btn {
+          min-height: 50px;
+          padding: 13px 22px;
         }
 
         button {
-          width: 100%;
+          touch-action: manipulation;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .screen {
+          padding-right: 12px;
+          padding-left: 12px;
+        }
+
+        .card {
+          padding-right: 16px;
+          padding-left: 16px;
+        }
+
+        .buttons {
+          gap: 10px;
+        }
+
+        .buttons button {
+          padding-right: 14px;
+          padding-left: 14px;
         }
       }
     </style>
